@@ -87,6 +87,8 @@ print(p)  # Output: Point(x=1, y=2)
 
 ## [GitHub Actions](https://github.com/features/actions)
 
+Add `.github/workflows/CI-API.yaml`:
+
 ```yaml
 name: CI-API
 
@@ -110,4 +112,18 @@ jobs:
         run: docker build -t project-api:ci ./project-api
       - name: Run tests
         run: docker run --rm project-api:ci pytest
+```
+
+## [Dependabot](https://dependabot.com/)
+
+Add `.github/dependabot.yml`:
+
+```yaml
+version: 2
+updates:
+
+- package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
 ```
