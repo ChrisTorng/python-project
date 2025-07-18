@@ -15,10 +15,16 @@ uv add --dev pytest ruff pre-commit mkdocs fastapi pydantic
 
 # Update the lock file with the latest versions of the dependencies (creates a .venv if not already created)
 uv sync
-
-# Activate the .venv
-uv venv activate
 ```
+
+# VS Code Python runtime activate
+
+In VSCode
+
+- Open `python-api\main.py`, on right bottom corner, click version.
+- Enter interpreter path: `python-api\.venv\Scripts\python.exe`.
+- "Kill Terminal" and reopen it
+- It should run `& d:/Projects/GitHub/ChrisTorng/python-project/python-api/.venv/Scripts/Activate.ps1` and shows `(python-api)` as currently activated environment.
 
 ## gitleaks
 
