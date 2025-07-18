@@ -84,3 +84,30 @@ class Point:
 p = Point(1, 2)
 print(p)  # Output: Point(x=1, y=2)
 ```
+
+## [GitHub Actions](https://github.com/features/actions)
+
+```yaml
+name: CI-API
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    # runs-on: windows-latest
+    # runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t project-api:ci ./project-api
+      - name: Run tests
+        run: docker run --rm project-api:ci pytest
+```
