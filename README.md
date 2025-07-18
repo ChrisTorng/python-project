@@ -26,9 +26,61 @@ In VSCode
 - "Kill Terminal" and reopen it
 - It should run `& d:/Projects/GitHub/ChrisTorng/python-project/python-api/.venv/Scripts/Activate.ps1` and shows `(python-api)` as currently activated environment.
 
-## gitleaks
+## [gitleaks](https://github.com/gitleaks/gitleaks): prevent API key or password leaks
 
-[gitleaks](https://github.com/gitleaks/gitleaks) - [Releases](https://github.com/gitleaks/gitleaks/releases) - Show all 14 assets - Download gitleaks_xxx_windows_x64.zip
+ - [Releases](https://github.com/gitleaks/gitleaks/releases) - Show all 14 assets - Download gitleaks_xxx_windows_x64.zip
 
 Make a `gitleaks.cmd` in PATH folder. You can run `gitleaks` in Terminal.
 
+## [ruff](https://github.com/astral-sh/ruff): super-fast linter and code formatter
+
+```bash
+# Lint all files under current folder, or in `/path/to/code` (and any subdirectories).
+ruff check (path/to/code/)
+
+# Format all files under current folder, or in `/path/to/code` (and any subdirectories).
+ruff format (path/to/code/)
+```
+
+## https://github.com/astral-sh/ty: type checker
+
+## [pytest](https://docs.pytest.org/en/stable/): unit test framework
+
+```bash
+uv run pytest
+```
+
+## [Pydantic](https://pydantic-docs.helpmanual.io/): data validation and settings management library
+
+[Pydantic Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+
+```python
+from pydantic import BaseSettings
+
+class Settings(BaseSettings):
+    api_key: str
+    db_url: str
+
+    class Config:
+        env_file = ".env"
+
+settings = Settings()
+```
+
+##  [MkDocs](https://www.mkdocs.org/): documentation and static generation of the website
+
+## [FastAPI](https://fastapi.tiangolo.com/): web framework for building APIs based on standard Python type hints
+
+## [dataclasses](https://docs.python.org/3/library/dataclasses.html): a Python feature that provides a way to define classes that are primarily used to store data.
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: int
+    y: int
+
+p = Point(1, 2)
+print(p)  # Output: Point(x=1, y=2)
+```
