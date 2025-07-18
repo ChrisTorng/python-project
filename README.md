@@ -87,43 +87,12 @@ print(p)  # Output: Point(x=1, y=2)
 
 ## [GitHub Actions](https://github.com/features/actions)
 
-Add `.github/workflows/CI-API.yaml`:
-
-```yaml
-name: CI-API
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    # runs-on: windows-latest
-    # runs-on: macos-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build Docker image
-        run: docker build -t project-api:ci ./project-api
-      - name: Run tests
-        run: docker run --rm project-api:ci pytest
-```
+Add [.github/workflows/CI-API.yaml](.github/workflows/CI-API.yaml).
 
 ## [Dependabot](https://dependabot.com/)
 
-Add `.github/dependabot.yml`:
+Add [.github/dependabot.yml](.github/dependabot.yml).
 
-```yaml
-version: 2
-updates:
+## [pre-commit](https://pre-commit.com/) Hooks
 
-- package-ecosystem: "uv"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-```
+Add [.pre-commit-config.yaml](.pre-commit-config.yaml).
