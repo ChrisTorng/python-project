@@ -7,10 +7,10 @@
 curl -sSfL <https://astral.sh/install.sh> | sh
 
 # Initialize a new project (adds .gitignore, .python-version, pyproject.toml, etc.)
-uv init python-api
+uv init project-api
 
 # Add some dependencies into the project and update pyproject.toml
-cd python-api
+cd project-api
 uv add --dev pytest ruff pre-commit mkdocs fastapi pydantic
 
 # Update the lock file with the latest versions of the dependencies (creates a .venv if not already created)
@@ -21,10 +21,10 @@ uv sync
 
 In VSCode
 
-- Open `python-api\main.py`, on right bottom corner, click version.
-- Enter interpreter path: `python-api\.venv\Scripts\python.exe`.
+- Open `project-api\main.py`, on right bottom corner, click version.
+- Enter interpreter path: `project-api\.venv\Scripts\python.exe`.
 - "Kill Terminal" and reopen it
-- It should run `& d:/Projects/GitHub/ChrisTorng/python-project/python-api/.venv/Scripts/Activate.ps1` and shows `(python-api)` as currently activated environment.
+- It should run `& d:/Projects/GitHub/ChrisTorng/python-project/project-api/.venv/Scripts/Activate.ps1` and shows `(project-api)` as currently activated environment.
 
 ## [gitleaks](https://github.com/gitleaks/gitleaks): prevent API key or password leaks
 
@@ -96,3 +96,35 @@ Add [.github/dependabot.yml](.github/dependabot.yml).
 ## [pre-commit](https://pre-commit.com/) Hooks
 
 Add [.pre-commit-config.yaml](.pre-commit-config.yaml).
+
+## [Podman](https://podman.io/)
+
+Add [Dockerfile](project-api/Dockerfile)  and [docker-compose.yml](docker-compose.yml).
+
+```
+podman machine start
+podman compose build
+podman compose up --build -d
+podman compose stop
+```
+
+## [Make](https://www.gnu.org/software/make/)
+
+Add [project-api/Makefile](project-api/Makefile).
+
+```bash
+cd project-api
+make test
+make format-fix
+make lint-fix
+```
+
+Add [Makefile](Makefile).
+
+```bash
+podman machine start
+make infra-build
+make infra-up
+make infra-stop
+```
+
