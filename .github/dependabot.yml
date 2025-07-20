@@ -1,7 +1,15 @@
 version: 2
 updates:
-
-- package-ecosystem: "uv"
-    directory: "/"
+  # Python 相依套件 (使用 uv)
+  - package-ecosystem: "uv"
+    directory: "/project-api"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 10
+    
+  # Docker 相依套件
+  - package-ecosystem: "docker"
+    directory: "/project-api"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
