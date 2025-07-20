@@ -19,4 +19,4 @@ jobs:
       - name: Build Docker image
         run: docker build -t project-api:ci ./project-api
       - name: Run tests
-        run: docker run --rm project-api:ci pytest
+        run: docker run --rm project-api:ci uv run pytest
