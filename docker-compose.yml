@@ -6,7 +6,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./project-api:/app
+      - ./project-api/src:/app/src
+      - ./project-api/tools:/app/tools
     environment:
       - ENV_VAR=value
     networks:

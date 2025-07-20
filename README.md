@@ -107,7 +107,9 @@ Open [http://localhost:8000/docs](http://localhost:8000/docs) to see the API doc
 Add [project-api/src/app/tests/test_api.py](project-api/src/app/tests/test_api.py).
 
 ```bash
-uv run pytest
+uv pip install -e .
+rm src/project_api.egg-info
+pytest # or `uv run pytest`
 ```
 
 ## [Pydantic](https://pydantic-docs.helpmanual.io/): data validation and settings management library
@@ -188,7 +190,16 @@ podman machine start
 podman-compose build
 podman-compose up --build -d
 podman-compose stop
+podman-compose down
 ```
+
+Run this to enter the container:
+
+```bash
+podman run --rm -it python-project_project-api /bin/bash
+```
+
+Run `podman-compose logs project-api` to see the logs of the `project-api` service.
 
 ## [Make](https://www.gnu.org/software/make/)
 
