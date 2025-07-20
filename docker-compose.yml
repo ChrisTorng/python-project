@@ -1,0 +1,26 @@
+services:
+  project-api:
+    build:
+      context: ./project-api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./project-api:/app
+    environment:
+      - ENV_VAR=value
+    networks:
+      - project-network
+
+  # project-ui:
+  #   build:
+  #     context: ./project-ui
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - project-network
+
+networks:
+  project-network:
+    driver: bridge
