@@ -6,3 +6,6 @@ infra-up:
 
 infra-stop:
 	podman-compose stop
+
+infra-down:
+	podman-compose down

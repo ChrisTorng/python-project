@@ -219,5 +219,7 @@ podman machine start
 make infra-build
 make infra-up
 make infra-stop
+make infra-down
 ```
 
+For every update, run `make infra-down` then `make infra-build` to rebuild and run the container images.
