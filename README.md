@@ -129,6 +129,21 @@ settings = Settings()
 
 ##  [MkDocs](https://www.mkdocs.org/): documentation and static generation of the website
 
+```bash
+mkdocs new project-api
+cd project-api
+mkdocs serve -a 127.0.0.1:8001
+```
+Open [http://127.0.0.1:8001/](http://127.0.0.1:8001/) to view the documentation site.
+
+Update [mkdocs.yml](project-api/mkdocs.yml) to add navigation and theme.
+
+```bash
+mkdocs build
+```
+
+Add `project-api/site/` to `.gitignore` to ignore the generated site files.
+
 ## [dataclasses](https://docs.python.org/3/library/dataclasses.html): a Python feature that provides a way to define classes that are primarily used to store data.
 
 ```python
@@ -153,7 +168,7 @@ Add [.github/dependabot.yml](.github/dependabot.yml).
 
 ## [pre-commit](https://pre-commit.com/) Hooks
 
-Add [.pre-commit-config.yaml](.pre-commit-config.yaml).
+Add [.pre-commit-config.yaml](.pre-commit-config.yaml), with `ruff check/format` and `gitleaks`.
 
 ```bash
 pre-commit autoupdate
