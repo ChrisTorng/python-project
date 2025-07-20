@@ -94,7 +94,7 @@ Add [project-api/src/app/api.py](project-api/src/app/api.py) and [project-api/sr
 
 Run with:
 ```bash
-.\.venv\Scripts\fastapi run src\app\api.py
+fastapi run project-api/src/app/api.py
 ```
 
 Open [http://localhost:8000/](http://localhost:8000/) run the default API.
@@ -154,6 +154,14 @@ Add [.github/dependabot.yml](.github/dependabot.yml).
 ## [pre-commit](https://pre-commit.com/) Hooks
 
 Add [.pre-commit-config.yaml](.pre-commit-config.yaml).
+
+```bash
+pre-commit autoupdate
+pre-commit install
+pre-commit run --all-files
+```
+
+Now every time you commit, it will run the pre-commit hooks defined in `.pre-commit-config.yaml`.
 
 ## [Podman](https://podman.io/)
 
