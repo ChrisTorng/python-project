@@ -164,9 +164,17 @@ print(p)  # Output: Point(x=1, y=2)
 
 Add [.github/workflows/CI-API.yaml](.github/workflows/CI-API.yaml).
 
+Check in [GitHub Actions](https://github.com/ChrisTorng/python-project/actions) for errors.
+
 ## [Dependabot](https://dependabot.com/)
 
 Add [.github/dependabot.yml](.github/dependabot.yml).
+
+Check in Insights - Dependency Graph - [Dependabot](https://github.com/ChrisTorng/python-project/network/updates) for errors.
+
+Go to Security - [Advanced Security](https://github.com/ChrisTorng/python-project/settings/security_analysis) to enable all.
+
+Fix anything that is reported as a security vulnerability.
 
 ## [pre-commit](https://pre-commit.com/) Hooks
 
