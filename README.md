@@ -55,7 +55,7 @@ uv init project-api
 
 # Add some dependencies into the project and update pyproject.toml
 cd project-api
-uv add --dev pytest ruff pre-commit mkdocs fastapi pydantic
+uv add --dev pytest ruff pre-commit mkdocs fastapi pydantic ty
 
 # Update the lock file with the latest versions of the dependencies (creates a .venv if not already created)
 uv sync
@@ -86,7 +86,12 @@ ruff check (path/to/code/)
 ruff format (path/to/code/)
 ```
 
-## https://github.com/astral-sh/ty: type checker
+## [ty](https://docs.astral.sh/ty/): type checker
+
+```bash
+cd project-api
+uvx run ty check
+```
 
 ## [FastAPI](https://fastapi.tiangolo.com/): web framework for building APIs based on standard Python type hints
 
